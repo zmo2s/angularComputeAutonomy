@@ -1,0 +1,35 @@
+<p>form1</p>
+<router-outlet></router-outlet>
+<input type="text" class="form-control" id="name"
+       required
+       [(ngModel)]="model._name" name="name" fxFlex="50">
+<input type="text" class="form-control" id="version"
+       required
+       [(ngModel)]="model._version" name="version" fxFlex="50">
+
+
+       <form class="new-person-form">
+              <mat-card fxLayout="row">
+                  <mat-form-field>
+                      <input matInput placeholder="Name" fxFlex="50" fxFlexOffset="15">
+                  </mat-form-field>
+                  <mat-form-field>
+                      <input matInput placeholder="Birthday" fxFlex="25" fxFlexOffset="15">
+                  </mat-form-field>
+                  <mat-checkbox fxFlex="25">Active</mat-checkbox>
+              </mat-card>
+       </form>
+
+       <div class="col-4">
+              <select
+                class="form-control"
+                id="pCategory"
+                name="pCategory"
+                [(ngModel)]="selectedCategoryArray"
+              >
+                <option value=""  disabled>Choose a Category</option>
+                <option *ngFor="let c of categories" [ngValue]="c">{{ c.name }}</option>
+              </select>
+            </div>
+            <div class="col-4"></div>
+        
